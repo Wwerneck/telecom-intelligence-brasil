@@ -29,7 +29,7 @@ streamlit run streamlit/app.py
 ```
 
 O dashboard usa os marts Parquet auditados como modo local. A competência inicial é a mais
-recente e pode ser alterada na barra lateral.
+recente e pode ser alterada na barra superior de filtros e contexto.
 
 ## Observabilidade
 

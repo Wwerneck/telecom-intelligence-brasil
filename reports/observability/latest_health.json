@@ -1,6 +1,6 @@
 {
   "status": "healthy",
-  "checked_at": "2026-08-30T00:34:13.444536+00:00",
+  "checked_at": "2026-08-30T01:22:32.959993+00:00",
   "checks": [
     {
       "name": "monthly_partitions",
