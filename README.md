@@ -92,6 +92,22 @@ O dashboard estará disponível em `http://localhost:8501`. Para reconstruir o p
 os scripts de `ingest` e `transform` listados no [Makefile](Makefile). A operação do PostgreSQL,
 dbt e observabilidade está detalhada em [docs/operations.md](docs/operations.md).
 
+### Publicação no Streamlit Community Cloud
+
+O repositório inclui um snapshot compacto e auditado dos cinco marts necessários à demonstração
+online. A aplicação publicada não exige PostgreSQL, MinIO, Airflow ou credenciais de fontes.
+
+Na criação do app no Streamlit Community Cloud, use:
+
+- repositório: `Wwerneck/telecom-intelligence-brasil`;
+- branch: `master`;
+- arquivo principal: `streamlit/app.py`;
+- versão do Python: 3.12.
+
+As dependências da implantação estão declaradas em `requirements.txt`. Atualizações dos dados
+online devem passar novamente pelo pipeline e pelas reconciliações antes da substituição do
+snapshot publicado.
+
 ## Qualidade e auditabilidade
 
 O projeto mantém controles em todas as camadas:
@@ -144,8 +160,9 @@ pessoas conectadas.
 | `docs` | Arquitetura, decisões, fontes e operação |
 | `reports` | Evidências versionadas de qualidade e observabilidade |
 
-Dados gerados, credenciais, logs e perfis locais do dbt são ignorados pelo Git. Use
-`.env.example` somente como modelo e nunca versione o arquivo `.env`.
+Dados intermediários, credenciais, logs e perfis locais do dbt são ignorados pelo Git. Somente o
+snapshot Gold compacto usado na demonstração online é publicado. Use `.env.example` apenas como
+modelo e nunca versione o arquivo `.env`.
 
 ## Roadmap
 
