@@ -1,12 +1,18 @@
 """Interactive portfolio dashboard backed by audited broadband marts."""
 
+import sys
 from pathlib import Path
 
 import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
-from telecom_intelligence.analytics.dashboard_data import (
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+SOURCE_ROOT = PROJECT_ROOT / "src"
+if str(SOURCE_ROOT) not in sys.path:
+    sys.path.insert(0, str(SOURCE_ROOT))
+
+from telecom_intelligence.analytics.dashboard_data import (  # noqa: E402
     available_periods,
     filter_period,
     format_decimal,
@@ -27,14 +33,14 @@ st.set_page_config(
 )
 
 st.markdown(
-    f"<style>{Path('streamlit/styles.css').read_text(encoding='utf-8')}</style>",
+    f"<style>{(PROJECT_ROOT / 'streamlit/styles.css').read_text(encoding='utf-8')}</style>",
     unsafe_allow_html=True,
 )
 
 
 @st.cache_data(show_spinner=False)
 def load_data():
-    return load_local_marts(Path("data/gold/marts"))
+    return load_local_marts(PROJECT_ROOT / "data/gold/marts")
 
 
 st.markdown(
