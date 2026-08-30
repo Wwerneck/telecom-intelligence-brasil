@@ -48,6 +48,9 @@ PostgreSQL, dbt, Streamlit, Plotly, Pandera, Pytest, Ruff, Docker Compose e GitH
 
 ## Dashboard
 
+**Aplicação online:**
+[telecom-intelligence-brasil-589mnwkonxyj5aphdzn66k.streamlit.app](https://telecom-intelligence-brasil-589mnwkonxyj5aphdzn66k.streamlit.app/)
+
 O produto analítico apresenta uma visão executiva e responsiva da banda larga fixa, com:
 
 - filtro de competência e contexto metodológico na parte superior;
