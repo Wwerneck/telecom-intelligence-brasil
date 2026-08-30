@@ -40,10 +40,14 @@ def load_local_marts(root: Path) -> dict[str, pd.DataFrame]:
     """Load the latest content-addressed local artifact for every required mart."""
     marts: dict[str, pd.DataFrame] = {}
     for name in MART_NAMES:
-        candidates = sorted((root / name).glob("*.parquet"))
-        if not candidates:
+        csv_candidates = sorted((root / name).glob("*.csv.gz"))
+        parquet_candidates = sorted((root / name).glob("*.parquet"))
+        if csv_candidates:
+            marts[name] = pd.read_csv(csv_candidates[-1])
+        elif parquet_candidates:
+            marts[name] = pd.read_parquet(parquet_candidates[-1])
+        else:
             raise FileNotFoundError(f"Mart not found: {name}")
-        marts[name] = pd.read_parquet(candidates[-1])
     return marts
 
 

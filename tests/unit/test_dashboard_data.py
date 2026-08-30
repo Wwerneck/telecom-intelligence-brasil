@@ -3,6 +3,7 @@ from pathlib import Path
 import pandas as pd
 
 from telecom_intelligence.analytics.dashboard_data import (
+    MART_NAMES,
     available_periods,
     filter_period,
     format_decimal,
@@ -39,6 +40,21 @@ def test_loader_requires_all_marts(tmp_path: Path) -> None:
         assert "Mart not found" in str(error)
     else:
         raise AssertionError("Expected missing mart failure")
+
+
+def test_loader_prefers_cloud_csv_snapshot(tmp_path: Path) -> None:
+    expected = pd.DataFrame({"date_key": [20260601], "accesses": [56_609_491]})
+    for name in MART_NAMES:
+        directory = tmp_path / name
+        directory.mkdir()
+        expected.to_csv(directory / "snapshot.csv.gz", index=False, compression="gzip")
+
+    marts = load_local_marts(tmp_path)
+
+    assert set(marts) == set(MART_NAMES)
+    assert marts["mart_broadband_national_monthly"].to_dict("records") == (
+        expected.to_dict("records")
+    )
 
 
 def test_municipality_table_has_portuguese_labels_and_formats() -> None:

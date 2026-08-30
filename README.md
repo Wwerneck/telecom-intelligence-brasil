@@ -104,9 +104,10 @@ Na criação do app no Streamlit Community Cloud, use:
 - arquivo principal: `streamlit/app.py`;
 - versão do Python: 3.12.
 
-As dependências da implantação estão declaradas em `requirements.txt`. Atualizações dos dados
-online devem passar novamente pelo pipeline e pelas reconciliações antes da substituição do
-snapshot publicado.
+As dependências mínimas da implantação estão declaradas em `streamlit/requirements.txt`, ao lado
+do arquivo principal. O snapshot online usa CSV compactado para evitar dependências binárias no
+ambiente de deploy. Atualizações dos dados devem passar novamente pelo pipeline e pelas
+reconciliações antes da substituição do snapshot publicado.
 
 ## Qualidade e auditabilidade
 
