@@ -105,9 +105,9 @@ Na criação do app no Streamlit Community Cloud, use:
 - versão do Python: 3.12.
 
 As dependências mínimas da implantação estão declaradas em `streamlit/requirements.txt`, ao lado
-do arquivo principal. O snapshot online usa CSV compactado para evitar dependências binárias no
-ambiente de deploy. Atualizações dos dados devem passar novamente pelo pipeline e pelas
-reconciliações antes da substituição do snapshot publicado.
+do arquivo principal. O snapshot online usa CSV compactado para tornar a leitura independente do
+formato Parquet. Atualizações dos dados devem passar novamente pelo pipeline e pelas reconciliações
+antes da substituição do snapshot publicado.
 
 ## Qualidade e auditabilidade
 
