@@ -1,1 +1,1 @@
--e .[dashboard]
+.[dashboard]
