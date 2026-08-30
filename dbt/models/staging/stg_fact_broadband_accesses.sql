@@ -1,0 +1,23 @@
+select
+    date_key,
+    municipality_id,
+    ibge_code,
+    reference_year,
+    reference_month,
+    economic_group,
+    company_name,
+    company_cnpj,
+    provider_size,
+    speed_range,
+    speed_mbps,
+    technology,
+    access_medium,
+    person_type,
+    product_type,
+    accesses,
+    source_row_count,
+    _source_file,
+    _pipeline_run_id,
+    _sha256,
+    _silver_schema_version
+from {{ source('gold', 'fact_broadband_accesses') }}

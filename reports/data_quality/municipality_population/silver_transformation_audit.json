@@ -1,0 +1,14 @@
+{
+  "dataset": "municipality_population",
+  "period": 2025,
+  "source_sha256": "321710963df3d6e8ad63121f16d3444d79fe5d5d58ab41500af635fb208dcc86",
+  "steps": [
+    {"step": "remove_sidra_header", "records_before": 5572, "records_after": 5571, "records_rejected": 0, "reason": "first object is metadata, not an observation"},
+    {"step": "project_bronze_schema", "records_before": 5571, "records_after": 5571, "records_rejected": 0, "reason": null},
+    {"step": "parse_ibge_year_and_population", "records_before": 5571, "records_after": 5571, "records_rejected": 0, "reason": null},
+    {"step": "validate_unit_variable_year_and_non_negative_value", "records_before": 5571, "records_after": 5571, "records_rejected": 0, "reason": null},
+    {"step": "validate_business_key", "records_before": 5571, "records_after": 5571, "records_rejected": 0, "reason": null},
+    {"step": "join_dim_municipality_by_ibge_code", "records_before": 5571, "records_after": 5571, "records_rejected": 0, "reason": null}
+  ],
+  "final": {"records_input": 5571, "records_output": 5571, "records_rejected": 0}
+}

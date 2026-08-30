@@ -1,0 +1,43 @@
+{
+  "fact_accesses": 339886848,
+  "national_mart_accesses": 339886848,
+  "mart_rows": {
+    "municipality_monthly": 33423,
+    "national_monthly": 6,
+    "provider_monthly": 60942,
+    "technology_monthly": 502,
+    "speed_monthly": 30
+  },
+  "duplicate_grains": 0,
+  "unexpected_null_values": 0,
+  "expected_null_values": {
+    "first_month_growth_rate": 1
+  },
+  "share_sum_checks": {
+    "provider_by_month": true,
+    "technology_by_month": true,
+    "speed_range_by_month": true
+  },
+  "population": 213421037,
+  "population_reference_year": 2025,
+  "june_2026": {
+    "accesses": 56609491,
+    "accesses_per_100_inhabitants": 26.524794,
+    "fiber_accesses": 45493277,
+    "fiber_share_pct": 80.363339,
+    "high_speed_accesses": 53760862,
+    "high_speed_share_pct": 94.967930,
+    "month_over_month_pct": -0.658996,
+    "municipalities_with_access": 5571,
+    "companies": 9524
+  },
+  "idempotent_second_execution": true,
+  "dbt_executed": true,
+  "dbt_result": {
+    "models": 7,
+    "data_tests": 21,
+    "passed": 28,
+    "warnings": 0,
+    "errors": 0
+  }
+}

@@ -1,0 +1,46 @@
+version: 1
+dataset: fixed_broadband_accesses
+layer: bronze
+grain: one source row per access combination and reference month
+measure: accesses
+primary_key_candidate:
+  - reference_year
+  - reference_month
+  - economic_group
+  - company_name
+  - company_cnpj
+  - provider_size
+  - state_code
+  - municipality_name
+  - ibge_code
+  - speed_range
+  - speed_mbps
+  - technology
+  - access_medium
+  - person_type
+  - product_type
+columns:
+  - {name: reference_year, type: int16, nullable: false, source: Ano}
+  - {name: reference_month, type: int8, nullable: false, source: Mês}
+  - {name: economic_group, type: string, nullable: false, source: Grupo Econômico}
+  - {name: company_name, type: string, nullable: false, source: Empresa}
+  - {name: company_cnpj, type: string, nullable: false, source: CNPJ}
+  - {name: provider_size, type: string, nullable: false, source: Porte da Prestadora}
+  - {name: state_code, type: string, nullable: false, source: UF}
+  - {name: municipality_name, type: string, nullable: false, source: Município}
+  - {name: ibge_code, type: int32, nullable: false, source: Código IBGE Município}
+  - {name: speed_range, type: string, nullable: false, source: Faixa de Velocidade}
+  - {name: speed_mbps, type: float64, nullable: false, source: Velocidade, decimal: comma}
+  - {name: technology, type: string, nullable: false, source: Tecnologia}
+  - {name: access_medium, type: string, nullable: false, source: Meio de Acesso}
+  - {name: person_type, type: string, nullable: false, source: Tipo de Pessoa}
+  - {name: product_type, type: string, nullable: false, source: Tipo de Produto}
+  - {name: accesses, type: int64, nullable: false, source: Acessos}
+technical_columns:
+  - _source_file
+  - _ingestion_timestamp
+  - _pipeline_run_id
+  - _sha256
+  - _reference_date
+  - _bronze_timestamp
+  - _schema_version

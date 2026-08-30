@@ -1,0 +1,21 @@
+{
+  "source_rows": 4154103,
+  "silver_rows": 3920634,
+  "duplicate_key_occurrences_consolidated": 233469,
+  "duplicate_key_groups": 233070,
+  "groups_with_varying_access_values": 219621,
+  "exact_duplicate_occurrences_after_first": 13608,
+  "rejected_rows": 0,
+  "source_accesses": 339886848,
+  "silver_accesses": 339886848,
+  "rejected_accesses": 0,
+  "duplicate_keys_after_silver": 0,
+  "null_values_after_silver": 0,
+  "ibge_codes_not_in_dimension": 0,
+  "state_code_mismatches_after_silver": 0,
+  "canonical_name_mismatches_after_silver": 0,
+  "source_name_mismatch_rows_canonicalized": 6304,
+  "source_name_mismatch_distinct_codes": 27,
+  "silver_size_bytes": 21434475,
+  "idempotent_second_execution": true
+}

@@ -1,0 +1,31 @@
+version: 1
+dataset: municipality_directory
+layer: bronze
+grain: one row per current IBGE municipality
+primary_key: ibge_code
+columns:
+  - {name: ibge_code, type: int64, nullable: false, source: id}
+  - {name: municipality_name, type: string, nullable: false, source: nome}
+  - {name: legacy_microregion_id, type: int64, nullable: true, source: microrregiao.id}
+  - {name: legacy_microregion_name, type: string, nullable: true, source: microrregiao.nome}
+  - {name: legacy_mesoregion_id, type: int64, nullable: true, source: microrregiao.mesorregiao.id}
+  - {name: legacy_mesoregion_name, type: string, nullable: true, source: microrregiao.mesorregiao.nome}
+  - {name: immediate_region_id, type: int64, nullable: false, source: regiao-imediata.id}
+  - {name: immediate_region_name, type: string, nullable: false, source: regiao-imediata.nome}
+  - {name: intermediate_region_id, type: int64, nullable: false, source: regiao-imediata.regiao-intermediaria.id}
+  - {name: intermediate_region_name, type: string, nullable: false, source: regiao-imediata.regiao-intermediaria.nome}
+  - {name: state_id, type: int64, nullable: false, source: regiao-imediata.regiao-intermediaria.UF.id}
+  - {name: state_code, type: string, nullable: false, source: regiao-imediata.regiao-intermediaria.UF.sigla}
+  - {name: state_name, type: string, nullable: false, source: regiao-imediata.regiao-intermediaria.UF.nome}
+  - {name: region_id, type: int64, nullable: false, source: regiao-imediata.regiao-intermediaria.UF.regiao.id}
+  - {name: region_code, type: string, nullable: false, source: regiao-imediata.regiao-intermediaria.UF.regiao.sigla}
+  - {name: region_name, type: string, nullable: false, source: regiao-imediata.regiao-intermediaria.UF.regiao.nome}
+technical_columns:
+  - _source_file
+  - _ingestion_timestamp
+  - _pipeline_run_id
+  - _sha256
+  - _reference_date
+  - _bronze_timestamp
+  - _schema_version
+

@@ -1,0 +1,23 @@
+version: 1
+dataset: fixed_broadband_accesses
+layer: gold
+model: fact_broadband_accesses
+grain:
+  - date_key
+  - municipality_id
+  - economic_group
+  - company_name
+  - company_cnpj
+  - provider_size
+  - speed_range
+  - speed_mbps
+  - technology
+  - access_medium
+  - person_type
+  - product_type
+foreign_keys:
+  municipality_id: dim_municipality.municipality_id
+  date_key: dim_date.date_key
+measures:
+  - accesses
+  - source_row_count

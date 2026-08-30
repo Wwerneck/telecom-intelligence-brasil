@@ -1,0 +1,21 @@
+project:
+  name: telecom-intelligence-brasil
+  timezone: America/Sao_Paulo
+  default_language: pt-BR
+
+storage:
+  bucket: telecom-data
+  layers: [raw, bronze, silver, gold, quarantine]
+  parquet_compression: zstd
+  partitioning: [dataset, year, month]
+
+ingestion:
+  connect_timeout_seconds: 30
+  read_timeout_seconds: 300
+  max_attempts: 3
+  immutable_raw: true
+
+quality:
+  fail_on_critical_schema_drift: true
+  quarantine_invalid_records: true
+

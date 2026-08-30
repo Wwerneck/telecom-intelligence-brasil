@@ -1,0 +1,11 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+COPY pyproject.toml README.md ./
+COPY src ./src
+COPY streamlit ./streamlit
+RUN pip install --no-cache-dir ".[dashboard]"
+
+EXPOSE 8501
+CMD ["streamlit", "run", "streamlit/app.py", "--server.address=0.0.0.0"]
+

@@ -1,0 +1,24 @@
+version: 1
+dataset: municipality_directory
+layer: silver
+grain: one valid row per IBGE municipality
+primary_key: ibge_code
+required_columns:
+  - ibge_code
+  - municipality_name
+  - municipality_key
+  - state_id
+  - state_code
+  - state_name
+  - region_id
+  - region_code
+  - region_name
+accepted_values:
+  state_code: [AC, AL, AP, AM, BA, CE, DF, ES, GO, MA, MT, MS, MG, PA, PB, PR, PE, PI, RJ, RN, RS, RO, RR, SC, SP, SE, TO]
+  region_name: [Norte, Nordeste, Sudeste, Sul, Centro-Oeste]
+nullable_by_design:
+  - legacy_microregion_id
+  - legacy_microregion_name
+  - legacy_mesoregion_id
+  - legacy_mesoregion_name
+

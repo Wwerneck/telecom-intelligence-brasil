@@ -1,0 +1,19 @@
+{
+  "dbt_version": "1.12.3",
+  "postgres_adapter_version": "1.11.0",
+  "postgres_version": "16.15",
+  "models": 7,
+  "data_tests": 21,
+  "pass": 28,
+  "warn": 0,
+  "error": 0,
+  "skip": 0,
+  "elapsed_seconds": 28.10,
+  "source_rows": {
+    "fact_broadband_accesses": 3920634,
+    "dim_municipality": 5571,
+    "dim_date": 6
+  },
+  "national_mart_rows": 6,
+  "national_mart_accesses": 339886848
+}

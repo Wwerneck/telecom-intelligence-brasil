@@ -1,0 +1,24 @@
+column,dtype,null_count,null_percentage,unique_count,cardinality_percentage,min,max,text_min_length,text_max_length
+id,int64,0,0.0,5571,100.0,1100015,5300108,,
+nome,str,0,0.0,5298,95.099623,Abadia de Goiás,Óleo,3.0,32.0
+microrregiao.id,float64,1,0.01795,558,10.016155,11001.0,53001.0,,
+microrregiao.nome,str,1,0.01795,554,9.944355,Adamantina,Óbidos,3.0,36.0
+microrregiao.mesorregiao.id,float64,1,0.01795,137,2.459164,1101.0,5301.0,,
+microrregiao.mesorregiao.nome,str,1,0.01795,137,2.459164,Agreste Alagoano,Zona da Mata,5.0,34.0
+microrregiao.mesorregiao.UF.id,float64,1,0.01795,27,0.484653,11.0,53.0,,
+microrregiao.mesorregiao.UF.sigla,str,1,0.01795,27,0.484653,AC,TO,2.0,2.0
+microrregiao.mesorregiao.UF.nome,str,1,0.01795,27,0.484653,Acre,Tocantins,4.0,19.0
+microrregiao.mesorregiao.UF.regiao.id,float64,1,0.01795,5,0.08975,1.0,5.0,,
+microrregiao.mesorregiao.UF.regiao.sigla,str,1,0.01795,5,0.08975,CO,SE,1.0,2.0
+microrregiao.mesorregiao.UF.regiao.nome,str,1,0.01795,5,0.08975,Centro-Oeste,Sul,3.0,12.0
+regiao-imediata.id,int64,0,0.0,510,9.15455,110001,530001,,
+regiao-imediata.nome,str,0,0.0,508,9.11865,Abaetetuba,Águas Lindas de Goiás,3.0,64.0
+regiao-imediata.regiao-intermediaria.id,int64,0,0.0,133,2.387363,1101,5301,,
+regiao-imediata.regiao-intermediaria.nome,str,0,0.0,133,2.387363,Altamira,Volta Redonda - Barra Mansa,4.0,34.0
+regiao-imediata.regiao-intermediaria.UF.id,int64,0,0.0,27,0.484653,11,53,,
+regiao-imediata.regiao-intermediaria.UF.sigla,str,0,0.0,27,0.484653,AC,TO,2.0,2.0
+regiao-imediata.regiao-intermediaria.UF.nome,str,0,0.0,27,0.484653,Acre,Tocantins,4.0,19.0
+regiao-imediata.regiao-intermediaria.UF.regiao.id,int64,0,0.0,5,0.08975,1,5,,
+regiao-imediata.regiao-intermediaria.UF.regiao.sigla,str,0,0.0,5,0.08975,CO,SE,1.0,2.0
+regiao-imediata.regiao-intermediaria.UF.regiao.nome,str,0,0.0,5,0.08975,Centro-Oeste,Sul,3.0,12.0
+microrregiao,float64,5571,100.0,0,0.0,,,,

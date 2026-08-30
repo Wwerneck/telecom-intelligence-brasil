@@ -1,0 +1,13 @@
+version: 1
+dataset: municipality_population
+layer: bronze
+grain: one row per municipality and reference year
+primary_key: [ibge_code, population_reference_year]
+sidra_contract:
+  territorial_level_code: "6"
+  unit_code: "45"
+  unit_name: Pessoas
+  variable_code: "9324"
+  variable_name: População residente estimada
+  period: "2025"
+

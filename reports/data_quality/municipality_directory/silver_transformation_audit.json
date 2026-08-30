@@ -1,0 +1,47 @@
+{
+  "dataset": "municipality_directory",
+  "reference_date": "2026-08-28",
+  "source_sha256": "d9eec8439bc8c5dc2f7db6332a8e5569f5a3f637988e26aebc513412d4069d5c",
+  "steps": [
+    {
+      "step": "read_bronze_and_validate_schema",
+      "records_before": 5571,
+      "records_after": 5571,
+      "records_rejected": 0,
+      "reason": null
+    },
+    {
+      "step": "normalize_unicode_whitespace_and_invisible_characters",
+      "records_before": 5571,
+      "records_after": 5571,
+      "records_rejected": 0,
+      "reason": null
+    },
+    {
+      "step": "create_municipality_matching_key",
+      "records_before": 5571,
+      "records_after": 5571,
+      "records_rejected": 0,
+      "reason": null
+    },
+    {
+      "step": "validate_ibge_code_uf_region_and_required_fields",
+      "records_before": 5571,
+      "records_after": 5571,
+      "records_rejected": 0,
+      "reason": null
+    },
+    {
+      "step": "validate_primary_key_duplicates",
+      "records_before": 5571,
+      "records_after": 5571,
+      "records_rejected": 0,
+      "reason": null
+    }
+  ],
+  "final": {
+    "records_input": 5571,
+    "records_output": 5571,
+    "records_rejected": 0
+  }
+}

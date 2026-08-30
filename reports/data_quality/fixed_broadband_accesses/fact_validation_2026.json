@@ -1,0 +1,17 @@
+{
+  "silver_rows": 3920634,
+  "fact_rows": 3920634,
+  "source_rows_represented": 4154103,
+  "silver_accesses": 339886848,
+  "fact_accesses": 339886848,
+  "fact_duplicate_keys": 0,
+  "fact_null_values": 0,
+  "municipality_foreign_key_gaps": 0,
+  "date_foreign_key_gaps": 0,
+  "nonpositive_access_rows": 0,
+  "date_dimension_rows": 6,
+  "reference_period_min": "2026-01",
+  "reference_period_max": "2026-06",
+  "fact_size_bytes": 16981686,
+  "idempotent_second_execution": true
+}

@@ -1,0 +1,5 @@
+column,classification,strategy,affected_records,justification
+legacy_microregion_id,not_available,keep_null,1,New municipality has no legacy microregion in the official response
+legacy_microregion_name,not_available,keep_null,1,New municipality has no legacy microregion in the official response
+legacy_mesoregion_id,not_available,keep_null,1,New municipality has no legacy mesoregion in the official response
+legacy_mesoregion_name,not_available,keep_null,1,New municipality has no legacy mesoregion in the official response

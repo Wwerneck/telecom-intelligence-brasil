@@ -1,0 +1,21 @@
+{
+  "rows": 5571,
+  "unique_ibge_codes": 5571,
+  "duplicate_codes": 0,
+  "invalid_codes": 0,
+  "non_numeric_values": 0,
+  "negative_values": 0,
+  "minimum_population": 856,
+  "maximum_population": 11904961,
+  "codes_not_in_geography": 0,
+  "geography_not_in_population": 0,
+  "unit_values": [
+    "Pessoas"
+  ],
+  "variable_values": [
+    "População residente estimada"
+  ],
+  "period_values": [
+    "2025"
+  ]
+}

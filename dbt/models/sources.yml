@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: gold
+    schema: gold
+    description: Gold Parquet models loaded into PostgreSQL without semantic changes.
+    tables:
+      - name: fact_broadband_accesses
+      - name: dim_municipality
+      - name: dim_date

@@ -1,0 +1,31 @@
+version: 1
+dataset: fixed_broadband_accesses
+layer: silver
+grain:
+  - reference_year
+  - reference_month
+  - economic_group
+  - company_name
+  - company_cnpj
+  - provider_size
+  - state_code
+  - ibge_code
+  - speed_range
+  - speed_mbps
+  - technology
+  - access_medium
+  - person_type
+  - product_type
+measure: accesses
+rules:
+  minimum_year: 2007
+  minimum_month: 1
+  maximum_month: 12
+  cnpj_regex: "^[0-9]{14}$"
+  minimum_speed_mbps: 0
+  minimum_accesses: 1
+  accepted_provider_sizes: [Grande Porte, Pequeno Porte]
+  accepted_speed_ranges: [0Kbps a 512Kbps, 512kbps a 2Mbps, 2Mbps a 12Mbps, 12Mbps a 34Mbps, "> 34Mbps"]
+  accepted_person_types: [Pessoa Física, Pessoa Jurídica]
+  accepted_product_types: [INTERNET, LINHA_DEDICADA, M2M, OUTROS]
+  accepted_access_media: [Cabo Coaxial, Cabo Metálico, Fibra, Rádio, Satélite]

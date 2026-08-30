@@ -1,0 +1,12 @@
+version: 1
+dataset: municipality_population
+layer: silver
+grain: one valid row per municipality and reference year
+primary_key: [ibge_code, population_reference_year]
+rules:
+  ibge_code_regex: "^[0-9]{7}$"
+  minimum_population: 0
+  accepted_unit: Pessoas
+  accepted_variable_code: "9324"
+  accepted_year: 2025
+

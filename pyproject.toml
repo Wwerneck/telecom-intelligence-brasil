@@ -1,0 +1,53 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "telecom-intelligence-brasil"
+version = "0.1.0"
+description = "Brazilian Telecommunications Data Platform & Market Intelligence"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Telecom Intelligence Brasil contributors" }]
+dependencies = [
+  "boto3>=1.35,<2",
+  "httpx>=0.27,<1",
+  "pandas>=2.2,<3",
+  "pandera>=0.20,<1",
+  "pyarrow>=17,<22",
+  "pyyaml>=6,<7",
+  "tenacity>=9,<10",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pre-commit>=4,<5",
+  "pytest>=8,<10",
+  "pytest-cov>=5,<8",
+  "ruff>=0.9,<1",
+]
+analytics = ["dbt-postgres>=1.9,<2", "numpy>=2,<3"]
+dashboard = ["plotly>=5,<7", "psycopg[binary]>=3.2,<4", "streamlit>=1.40,<2"]
+spark = ["pyspark>=3.5,<4"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/telecom_intelligence"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+src = ["src", "tests", "airflow/dags"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "RUF"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--strict-markers --strict-config -ra"
+pythonpath = ["src"]
+
+[tool.coverage.run]
+source = ["telecom_intelligence"]
+branch = true
+

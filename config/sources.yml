@@ -1,0 +1,65 @@
+version: 1
+
+# Resource URLs are added only after official endpoints have been verified in Phase 2.
+sources:
+  broadband:
+    institution: ANATEL
+    dataset: fixed_broadband_accesses
+    frequency: monthly
+    enabled: false
+    catalog_url: https://dados.gov.br/dados/conjuntos-dados/acessos---banda-larga-fixa
+    resource_url: https://www.anatel.gov.br/dadosabertos/paineis_de_dados/acessos/acessos_banda_larga_fixa.zip
+    discovery_status: endpoint_verified_selective_ingestion_pending
+    archive_member: Acessos_Banda_Larga_Fixa_2026.csv
+    content_length: 1029180610
+  mobile:
+    institution: ANATEL
+    dataset: mobile_accesses
+    frequency: monthly
+    enabled: false
+    catalog_url: null
+    resource_url: null
+    discovery_status: pending
+  stations:
+    institution: ANATEL
+    dataset: licensed_stations
+    frequency: to_be_verified
+    enabled: false
+    catalog_url: https://dados.gov.br/dados/conjuntos-dados/outorga-e-licenciamento---estaes-licenciadas
+    resource_url: null
+    discovery_status: catalog_verified_resource_pending
+  complaints:
+    institution: ANATEL
+    dataset: consumer_complaints
+    frequency: monthly
+    enabled: false
+    catalog_url: https://dados.gov.br/dados/conjuntos-dados/solicitacoesregistradasnaanatel
+    resource_url: null
+    discovery_status: catalog_verified_resource_pending
+  connectivity:
+    institution: ANATEL
+    dataset: brazilian_connectivity_index
+    frequency: to_be_verified
+    enabled: false
+    catalog_url: null
+    resource_url: null
+    discovery_status: pending
+  municipalities:
+    institution: IBGE
+    dataset: municipality_directory
+    frequency: annual
+    enabled: true
+    catalog_url: https://servicodados.ibge.gov.br/api/docs/localidades
+    resource_url: https://servicodados.ibge.gov.br/api/v1/localidades/municipios?orderBy=nome
+    discovery_status: endpoint_verified
+  population:
+    institution: IBGE
+    dataset: municipality_population
+    frequency: annual
+    enabled: true
+    catalog_url: https://sidra.ibge.gov.br/tabela/6579
+    resource_url: https://apisidra.ibge.gov.br/values/t/6579/n6/all/v/9324/p/2025?formato=json
+    discovery_status: endpoint_verified
+    table: 6579
+    variable: 9324
+    period: 2025

@@ -1,0 +1,26 @@
+{
+  "status": "healthy",
+  "checked_at": "2026-08-30T00:34:13.444536+00:00",
+  "checks": [
+    {
+      "name": "monthly_partitions",
+      "passed": true,
+      "detail": "bronze/silver/fact=6/6/6"
+    },
+    {
+      "name": "row_lineage_reconciliation",
+      "passed": true,
+      "detail": "bronze/silver/fact_source=4154103/4154103/4154103"
+    },
+    {
+      "name": "access_reconciliation",
+      "passed": true,
+      "detail": "fact/national=339886848/339886848"
+    },
+    {
+      "name": "quarantine_empty",
+      "passed": true,
+      "detail": "rows=0"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: mart_broadband_municipality_monthly
+    description: Monthly fixed-broadband KPIs by municipality.
+    columns:
+      - name: municipality_month_id
+        tests: [not_null, unique]
+      - name: municipality_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_dim_municipality')
+                field: municipality_id
+      - name: accesses
+        tests: [not_null]
+      - name: population
+        tests: [not_null]
+  - name: mart_broadband_national_monthly
+    description: One reconciled national KPI row per reference month.
+    columns:
+      - name: date_key
+        tests: [not_null, unique]
+      - name: accesses
+        tests: [not_null]
+      - name: population
+        tests: [not_null]
+  - name: mart_broadband_provider_monthly
+    columns:
+      - name: provider_month_id
+        tests: [not_null, unique]
+      - name: accesses
+        tests: [not_null]
+  - name: mart_broadband_technology_monthly
+    columns:
+      - name: technology_month_id
+        tests: [not_null, unique]
+      - name: accesses
+        tests: [not_null]
+  - name: mart_broadband_speed_monthly
+    columns:
+      - name: speed_month_id
+        tests: [not_null, unique]
+      - name: accesses
+        tests: [not_null]
